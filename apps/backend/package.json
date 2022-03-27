@@ -1,0 +1,30 @@
+{
+  "name": "@tituskirch/justacms-backend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "develop": "strapi develop",
+    "dev": "npm run develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.1.5",
+    "@strapi/plugin-users-permissions": "4.1.5",
+    "@strapi/plugin-i18n": "4.1.5",
+    "sqlite3": "5.0.2"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "a8e59133-1728-45d9-9fe6-70565bba38fa"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
