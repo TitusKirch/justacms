@@ -1,6 +1,10 @@
 <template>
   <div v-if="!pending && !error" class="mt-3 text-base text-gray-900">
-    <div class="flex gap-2 flex-col" v-html="computedHtml" />
+    <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+      <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+        <div class="flex gap-2 flex-col" v-html="computedHtml" />
+      </div>
+    </div>
   </div>
 </template>
 

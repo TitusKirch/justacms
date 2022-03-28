@@ -5,9 +5,11 @@
       <slot />
     </div>
   </div>
+  <AppFooter :items="footerItems" />
 </template>
 
 <script setup lang="ts">
+import { FooterResponse } from "~~/types/Footer";
 import { NavbarResponse } from "~~/types/Navbar";
 
 const config = useRuntimeConfig();
@@ -31,11 +33,23 @@ const navbar = await useAsyncData("navbar", () =>
     populate: ["items"],
   })
 );
+const footer = await useAsyncData("footer", () =>
+  find("footer", {
+    populate: ["items"],
+  })
+);
 
 const navbarItems = computed(() => {
   if (!navbar.data) {
     return [];
   }
   return (navbar.data.value as NavbarResponse).data.attributes.items;
+});
+
+const footerItems = computed(() => {
+  if (!footer.data) {
+    return [];
+  }
+  return (footer.data.value as FooterResponse).data.attributes.items;
 });
 </script>
