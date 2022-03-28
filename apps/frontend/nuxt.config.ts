@@ -13,5 +13,6 @@ export default defineNuxtConfig({
   },
   publicRuntimeConfig: {
     APP_NAME: process.env.APP_NAME,
+    STRAPI_URL: process.env.STRAPI_URL,
   },
 });

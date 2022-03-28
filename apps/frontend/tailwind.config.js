@@ -1,7 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  content: [],
+  content: ["./components/**/*.vue", "./layouts/**/*.vue", "./pages/**/*.vue"],
   theme: {
     theme: {
       extend: {
@@ -11,5 +11,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
