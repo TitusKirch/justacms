@@ -143,7 +143,7 @@ const articleHtml = computed(() => {
 const post = ref({
   title: "Boost your conversion rate",
   href: "#",
-  category: { name: "Article", href: "#" },
+  category: { name: "Category A", href: "#" },
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.",
   date: "Mar 16, 2020",
