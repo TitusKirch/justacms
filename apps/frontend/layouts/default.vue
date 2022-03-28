@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { Navbar } from "~~/types/Navbar";
+import { NavbarResponse } from "~~/types/Navbar";
 
 const config = useRuntimeConfig();
 const route = useRoute();
@@ -16,12 +16,14 @@ const { find } = useStrapi4();
 
 useMeta({
   htmlAttrs: {
-    class: "h-full bg-gray-100",
+    class: "h-full bg-gray-50",
   },
   bodyAttrs: {
     class: "h-full",
   },
-  title: computed(() => `${config.APP_NAME} - ${route.meta.title}`),
+  title: computed(() => {
+    return config.APP_NAME + (route.meta.title ? ` - ${route.meta.title}` : "");
+  }),
 });
 
 const navbar = await useAsyncData("navbar", () =>
@@ -34,6 +36,6 @@ const navbarItems = computed(() => {
   if (!navbar.data) {
     return [];
   }
-  return (navbar.data.value as Navbar).data.attributes.items;
+  return (navbar.data.value as NavbarResponse).data.attributes.items;
 });
 </script>

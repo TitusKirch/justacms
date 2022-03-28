@@ -1,8 +1,10 @@
+export interface NavbarResponse {
+  data: Navbar;
+}
+
 export interface Navbar {
-  data: {
-    attributes: {
-      items: NavbarItem[];
-    };
+  attributes: {
+    items: NavbarItem[];
   };
 }
 export interface NavbarItem {

@@ -1,7 +1,11 @@
-import { Media } from './Media';
+import { MediaResponse } from './Media';
 
-export interface Articles {
+export interface ArticlesResponse {
   data: [Article];
+}
+
+export interface ArticleResponse {
+  data: Article;
 }
 
 export interface Article {
@@ -11,7 +15,7 @@ export interface Article {
     description: string;
     message: string;
     slug?: string;
-    banner?: Media;
+    banner?: MediaResponse;
     createdAt: Date;
     updatedAt: Date;
     publishedAt: Date;

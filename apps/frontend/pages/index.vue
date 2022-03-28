@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { Articles } from "~~/types/Article";
+import { ArticlesResponse } from "~~/types/Article";
 
 const { find } = useStrapi4();
 
@@ -30,6 +30,6 @@ const articles = computed(() => {
   if (!data) {
     return [];
   }
-  return (data.value as Articles).data;
+  return (data.value as ArticlesResponse).data;
 });
 </script>
