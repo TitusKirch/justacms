@@ -25,7 +25,7 @@
             {{ article.attributes.title }}
           </p>
           <p
-            class="mt-3 text-base text-gray-500"
+            class="mt-3 text-base text-gray-500 line-clamp-5"
             :class="{
               'lg:line-clamp-2': theme === 'medium',
             }"

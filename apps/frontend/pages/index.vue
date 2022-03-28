@@ -23,6 +23,7 @@ definePageMeta({
 const { data } = await useAsyncData("articles", () =>
   find("articles", {
     populate: ["banner"],
+    sort: "publishedAt:DESC",
   })
 );
 
