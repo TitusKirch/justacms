@@ -22,9 +22,9 @@ const { data, pending, refresh, error } = await useAsyncData("pages", () =>
   })
 );
 
-if (!pending.value && error.value) {
-  router.push("/error");
-}
+// if (!pending.value && error.value) {
+//   router.push("/error");
+// }
 
 const page = computed(() => {
   if (!data) {

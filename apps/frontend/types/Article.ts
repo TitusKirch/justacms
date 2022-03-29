@@ -1,3 +1,4 @@
+import { CategoryResponse } from './Category';
 import { MediaResponse } from './Media';
 
 export interface ArticlesResponse {
@@ -13,6 +14,7 @@ export interface Article {
   attributes: {
     title: string;
     description: string;
+    category?: CategoryResponse;
     message: string;
     slug?: string;
     banner?: MediaResponse;

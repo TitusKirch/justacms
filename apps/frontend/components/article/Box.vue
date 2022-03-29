@@ -15,10 +15,16 @@
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
       <div class="flex-1">
-        <p class="text-sm font-medium text-teal-600">
-          <a :href="post.category.href" class="hover:underline">
-            {{ post.category.name }}
-          </a>
+        <p
+          v-if="article.attributes.category"
+          class="text-sm font-medium text-teal-600"
+        >
+          <NuxtLink
+            :to="'/category/' + article.attributes.category.data.id + '/'"
+            class="hover:underline"
+          >
+            {{ article.attributes.category.data.attributes.title }}
+          </NuxtLink>
         </p>
         <NuxtLink :to="articleTo" class="block mt-2">
           <p class="text-xl font-semibold text-gray-900">
