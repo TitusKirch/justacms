@@ -1,8 +1,7 @@
-import { defineNuxtConfig } from 'nuxt3';
+import { defineNuxtConfig } from 'nuxt';
 
-// https://v3.nuxtjs.org/docs/directory-structure/nuxt.config
 export default defineNuxtConfig({
-  buildModules: ["@nuxtjs/strapi", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxtjs/strapi", "@nuxtjs/tailwindcss"],
   head: {
     link: [
       {
@@ -11,8 +10,14 @@ export default defineNuxtConfig({
       },
     ],
   },
+  strapi: {
+    url: "http://localhost:1337",
+    version: "v4",
+  },
   publicRuntimeConfig: {
     APP_NAME: process.env.APP_NAME,
     STRAPI_URL: process.env.STRAPI_URL,
   },
+  //FIX: https://github.com/nuxt-community/tailwindcss-module/issues/480
+  devServerHandlers: [],
 });
